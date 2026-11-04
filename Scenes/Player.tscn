@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ilapscbl5l4s"]
+
+[ext_resource type="Script" uid="uid://cshrxhgjwkojr" path="res://Scenes/player.gd" id="1_rpqav"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g4v7s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yf5fn"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=747869968]
+script = ExtResource("1_rpqav")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=257432969]
+mesh = SubResource("CapsuleMesh_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1845804521]
+shape = SubResource("CapsuleShape3D_yf5fn")
+
+[node name="Head" type="Node3D" parent="." unique_id=1719480040]
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1191389305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42235202, 0)
+current = true
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=899502778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.42235202, 0)
+target_position = Vector3(0, 0, -3)
+
+[node name="Hand" type="Node3D" parent="Head/Camera3D" unique_id=1266492985]
