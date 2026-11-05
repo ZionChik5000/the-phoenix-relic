@@ -9,6 +9,12 @@ const SENSITIVITY := 0.005
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var ray: RayCast3D = $Head/Camera3D/RayCast3D
 
+
+func _enter_tree() -> void:
+	Global.player_node = self
+func _exit_tree() -> void:
+	Global.player_node = null
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	ray.add_exception(self)
