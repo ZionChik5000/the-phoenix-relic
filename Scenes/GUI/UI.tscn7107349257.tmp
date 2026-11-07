@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bu17jbdbr8al1"]
+
+[ext_resource type="Script" uid="uid://ctcw1krplk6kn" path="res://Scripts/GUI/ui.gd" id="1_huqb3"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1772806694]
+script = ExtResource("1_huqb3")
+
+[node name="Control" type="Control" parent="." unique_id=1272067423]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1261636194]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control/MarginContainer" unique_id=1750375365]
+layout_mode = 2

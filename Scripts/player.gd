@@ -5,6 +5,11 @@ const SPEED := 5.0
 const JUMP_VELOCITY := 4.5
 const SENSITIVITY := 0.005
 
+@export var current_hp: float
+@export var max_hp: float = 100
+
+signal hp_changed(new_hp: int)
+
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var ray: RayCast3D = $Head/Camera3D/RayCast3D
@@ -18,6 +23,8 @@ func _exit_tree() -> void:
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	ray.add_exception(self)
+	
+	current_hp = max_hp
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -53,3 +60,6 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func take_damage(amount: float) -> void:
+	pass

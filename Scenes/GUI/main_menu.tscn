@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://cb5l3eucnp63r"]
 
+[ext_resource type="Texture2D" uid="uid://bijw3y6qf26ux" path="res://Resources/phoenix_relic_logo.png" id="1_28flt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gr0wn"]
+texture = ExtResource("1_28flt")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 20
@@ -20,8 +25,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 367.0
+offset_right = -385.0
+offset_bottom = -548.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gr0wn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=238434012]
 layout_mode = 1
@@ -62,18 +71,3 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_g4v7s")
 text = "Exit"
-
-[node name="Label" type="Label" parent="." unique_id=1382059820]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -417.0
-offset_right = 417.0
-offset_bottom = 113.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 98
-text = "Phoenix Relic"
-horizontal_alignment = 1
-vertical_alignment = 1
