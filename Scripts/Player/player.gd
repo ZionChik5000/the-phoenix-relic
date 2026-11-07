@@ -62,4 +62,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage(amount: float) -> void:
-	pass
+	current_hp -= amount
+	current_hp = clamp(current_hp, 0, max_hp)
+	
+	hp_changed.emit(current_hp)
+	
+	if current_hp <= 0:
+		die()
+
+func die() -> void:
+	queue_free()
