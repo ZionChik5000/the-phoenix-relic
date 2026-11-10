@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bijw3y6qf26ux"
-path="res://.godot/imported/phoenix_relic_logo.png-a5606996555a53e3324c0457ef5d8991.ctex"
+path="res://.godot/imported/phoenix_relic_logo.png-0e76d1de5fb67984c7a38c48da1b12bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/phoenix_relic_logo.png"
-dest_files=["res://.godot/imported/phoenix_relic_logo.png-a5606996555a53e3324c0457ef5d8991.ctex"]
+source_file="res://Assets/Images/phoenix_relic_logo.png"
+dest_files=["res://.godot/imported/phoenix_relic_logo.png-0e76d1de5fb67984c7a38c48da1b12bd.ctex"]
 
 [params]
 

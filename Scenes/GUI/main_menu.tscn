@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cb5l3eucnp63r"]
 
-[ext_resource type="Texture2D" uid="uid://bijw3y6qf26ux" path="res://Resources/phoenix_relic_logo.png" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://bijw3y6qf26ux" path="res://Assets/Images/phoenix_relic_logo.png" id="1_28flt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gr0wn"]
 texture = ExtResource("1_28flt")

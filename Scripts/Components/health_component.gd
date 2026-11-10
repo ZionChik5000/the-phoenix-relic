@@ -1,5 +1,5 @@
-class_name HealthComponent
 extends Node
+class_name HealthComponent
 
 
 signal changed(current: float, max: float)
