@@ -16,5 +16,5 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Control/MarginContainer" unique_id=1750375365]
+[node name="ProgressBar" type="ProgressBar" parent="Control/MarginContainer" unique_id=45685892]
 layout_mode = 2

@@ -5,14 +5,12 @@ const SPEED := 5.0
 const JUMP_VELOCITY := 4.5
 const SENSITIVITY := 0.005
 
-@export var current_hp: float
-@export var max_hp: float = 100
-
-signal hp_changed(new_hp: int)
+signal died
 
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var ray: RayCast3D = $Head/Camera3D/RayCast3D
+@onready var health: HealthComponent = $HealthComponent
 
 
 func _enter_tree() -> void:
@@ -23,8 +21,7 @@ func _exit_tree() -> void:
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	ray.add_exception(self)
-	
-	current_hp = max_hp
+	health.died.connect(die)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -62,13 +59,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage(amount: float) -> void:
-	current_hp -= amount
-	current_hp = clamp(current_hp, 0, max_hp)
-	
-	hp_changed.emit(current_hp)
-	
-	if current_hp <= 0:
-		die()
+	health.take_damage(amount)
 
 func die() -> void:
-	queue_free()
+	set_physics_process(false)
+	died.emit()

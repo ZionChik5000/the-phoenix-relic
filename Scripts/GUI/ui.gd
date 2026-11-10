@@ -1,10 +1,7 @@
 extends CanvasLayer
 
-@onready var hp_bar: TextureProgressBar = $Control/MarginContainer/TextureProgressBar
+@onready var hp_bar: ProgressBar = $Control/MarginContainer/ProgressBar
 
-func init_hp(max_hp: int) -> void:
+func update_hp(current: float, max_hp: float) -> void:
+	hp_bar.value = current
 	hp_bar.max_value = max_hp
-	hp_bar.value = max_hp
-
-func update_hp(current_hp: int) -> void:
-	hp_bar.value = current_hp

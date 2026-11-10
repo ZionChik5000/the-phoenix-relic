@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 	pass
 	
 func interact(interactor):
-	print("interacted with ", interactor)
+	interactor.take_damage(10)
