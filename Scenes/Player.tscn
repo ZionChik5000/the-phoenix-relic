@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cshrxhgjwkojr" path="res://Scripts/Player/player.gd" id="1_rpqav"]
 [ext_resource type="Script" uid="uid://b7t4ffu3ysji0" path="res://Scripts/Components/health_component.gd" id="2_kyqiw"]
+[ext_resource type="PackedScene" uid="uid://htqnr8bjfj7h" path="res://Scenes/Weapons/Weapon.tscn" id="3_gntrk"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g4v7s"]
 
@@ -31,3 +32,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.42235202, 0)
 target_position = Vector3(0, 0, -3)
 
 [node name="Hand" type="Node3D" parent="Head/Camera3D" unique_id=1266492985]
+
+[node name="Weapon" parent="Head/Camera3D/Hand" unique_id=691588327 instance=ExtResource("3_gntrk")]
