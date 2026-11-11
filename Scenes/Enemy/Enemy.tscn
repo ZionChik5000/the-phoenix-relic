@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://kako0m7tqxuh"]
+
+[ext_resource type="Script" uid="uid://b7t4ffu3ysji0" path="res://Scripts/Components/health_component.gd" id="1_i1u57"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=277843308]
+
+[node name="HealthComponent" type="Node" parent="." unique_id=2054910670]
+script = ExtResource("1_i1u57")
+max_hp = 20.0
+metadata/_custom_type_script = "uid://b7t4ffu3ysji0"

@@ -12,6 +12,8 @@ signal died
 @onready var ray: RayCast3D = $Head/Camera3D/RayCast3D
 @onready var health: HealthComponent = $HealthComponent
 
+@onready var weapon: Weapon = $Head/Camera3D/Hand/Weapon
+
 
 func _enter_tree() -> void:
 	Global.player_node = self
@@ -35,8 +37,12 @@ func _unhandled_input(event):
 		if target and target.has_method("interact"):
 			target.interact(self)
 	
+	# TODO add the mouse movement lock when the mouse is visible and othervise. also have to add the pause menu
 	if event.is_action_pressed("escape"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	if event.is_action_pressed("attack"):
+		weapon.attack(ray)
 
 
 
@@ -63,4 +69,5 @@ func take_damage(amount: float) -> void:
 
 func die() -> void:
 	set_physics_process(false)
+	set_process_unhandled_input(false)
 	died.emit()

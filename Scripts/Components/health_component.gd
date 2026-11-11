@@ -2,7 +2,7 @@ extends Node
 class_name HealthComponent
 
 
-signal changed(current: float, max: float)
+signal changed(current: float, max_value: float)
 signal died
 
 @export var max_hp: float = 100.0
