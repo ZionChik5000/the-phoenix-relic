@@ -1,3 +1,4 @@
+
 extends CharacterBody3D
 
 
@@ -9,20 +10,23 @@ signal died
 
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
-@onready var ray: RayCast3D = $Head/Camera3D/RayCast3D
+@onready var interact_ray: RayCast3D = $Head/Camera3D/RayCast3D
 @onready var health: HealthComponent = $HealthComponent
 
 @onready var weapon: Weapon = $Head/Camera3D/Hand/Weapon
+@onready var attack_ray: RayCast3D = $Head/Camera3D/AttackRay
 
 
 func _enter_tree() -> void:
 	Global.player_node = self
+
 func _exit_tree() -> void:
 	Global.player_node = null
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	ray.add_exception(self)
+	interact_ray.add_exception(self)
+	attack_ray.add_exception(self)
 	health.died.connect(die)
 
 func _unhandled_input(event):
@@ -33,7 +37,7 @@ func _unhandled_input(event):
 		return
 	
 	if event.is_action_pressed("interact"):
-		var target := ray.get_collider()
+		var target := interact_ray.get_collider()
 		if target and target.has_method("interact"):
 			target.interact(self)
 	
@@ -42,8 +46,7 @@ func _unhandled_input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	if event.is_action_pressed("attack"):
-		weapon.attack(ray)
-
+		weapon.attack(attack_ray)
 
 
 func _physics_process(delta: float) -> void:

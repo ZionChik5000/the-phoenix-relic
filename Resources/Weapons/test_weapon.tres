@@ -1,8 +1,11 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cq4nbj0uflbqx"]
 
-[ext_resource type="Script" uid="uid://ypnwyjsgvnqv" path="res://Resources/Weapons/weapon_data.gd" id="1_posfa"]
+[ext_resource type="PackedScene" uid="uid://cd51tlqfnygol" path="res://Scenes/Weapons/Models/test_sword.tscn" id="1_t1n1u"]
+[ext_resource type="Script" uid="uid://ypnwyjsgvnqv" path="res://Resources/Weapons/weapon_data.gd" id="2_pk706"]
 
 [resource]
-script = ExtResource("1_posfa")
-item_name = "Test Weapon"
+script = ExtResource("2_pk706")
+cooldown = 0.6
+reach = 3.0
+model = ExtResource("1_t1n1u")
 metadata/_custom_type_script = "uid://ypnwyjsgvnqv"
