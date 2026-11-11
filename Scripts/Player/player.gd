@@ -10,11 +10,11 @@ signal died
 
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
-@onready var interact_ray: RayCast3D = $Head/Camera3D/RayCast3D
+@onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRayCast3D
 @onready var health: HealthComponent = $HealthComponent
 
 @onready var weapon: Weapon = $Head/Camera3D/Hand/Weapon
-@onready var attack_ray: RayCast3D = $Head/Camera3D/AttackRay
+@onready var attack_ray: RayCast3D = $Head/Camera3D/AttackRayCast3D
 
 
 func _enter_tree() -> void:

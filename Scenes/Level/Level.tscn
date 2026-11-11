@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ilapscbl5l4s" path="res://Scenes/Player.tscn" id="1_3hkb6"]
 [ext_resource type="Script" uid="uid://dpuetyjmdm3dm" path="res://Scripts/Level/level.gd" id="1_4dwx7"]
 [ext_resource type="Script" uid="uid://ocan1d8qtp16" path="res://Scripts/Testing/raycast_interact_test.gd" id="2_4dwx7"]
+[ext_resource type="PackedScene" uid="uid://kako0m7tqxuh" path="res://Scenes/Enemy/Enemy.tscn" id="4_k2uda"]
 [ext_resource type="PackedScene" uid="uid://bu17jbdbr8al1" path="res://Scenes/GUI/UI.tscn" id="4_qp1lj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p8rbg"]
@@ -17,11 +18,11 @@ background_mode = 2
 sky = SubResource("Sky_qtv3y")
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8rbg"]
-albedo_color = Color(0, 0.02216669, 0.19, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4v7s"]
 albedo_color = Color(1, 0.45999998, 0.45999998, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8rbg"]
+albedo_color = Color(0, 0.02216669, 0.19, 1)
 
 [node name="Level" type="Node3D" unique_id=1687836735]
 script = ExtResource("1_4dwx7")
@@ -35,24 +36,57 @@ transform = Transform3D(1, 0, 0, 0, 0.67190504, 0.7406373, 0, -0.7406373, 0.6719
 [node name="Player" parent="." unique_id=1844230733 instance=ExtResource("1_3hkb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1773228060]
+[node name="UI" parent="." unique_id=1772806694 instance=ExtResource("4_qp1lj")]
+
+[node name="Map" type="Node3D" parent="." unique_id=80659242]
+
+[node name="Plane" type="CSGBox3D" parent="Map" unique_id=740353291]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 1, 1, 1)
+material_override = SubResource("StandardMaterial3D_g4v7s")
+use_collision = true
+size = Vector3(40, 1, 40)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map" unique_id=1773228060]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -8)
 material_override = SubResource("StandardMaterial3D_p8rbg")
 use_collision = true
 size = Vector3(5, 1, 1)
 script = ExtResource("2_4dwx7")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=995373720]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Map" unique_id=995373720]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 3, 2.5, -6)
 material_override = SubResource("StandardMaterial3D_p8rbg")
 use_collision = true
 size = Vector3(4, 1, 1)
 script = ExtResource("2_4dwx7")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=740353291]
-transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 1, 1, 1)
-material_override = SubResource("StandardMaterial3D_g4v7s")
+[node name="CSGBox3D3" type="CSGBox3D" parent="Map" unique_id=968157388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1240215, 1.7281227, -16)
+material_override = SubResource("StandardMaterial3D_p8rbg")
 use_collision = true
-size = Vector3(20, 1, 20)
+size = Vector3(5, 1, 1)
+script = ExtResource("2_4dwx7")
 
-[node name="UI" parent="." unique_id=1772806694 instance=ExtResource("4_qp1lj")]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Map" unique_id=494647432]
+transform = Transform3D(0.7700528, 0, -0.63798016, 0, 1, 0, 0.63798016, 0, 0.7700528, 5.3939123, 1.8639274, -13.371836)
+material_override = SubResource("StandardMaterial3D_p8rbg")
+use_collision = true
+size = Vector3(5, 1, 1)
+script = ExtResource("2_4dwx7")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Map" unique_id=926766099]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -13.435495, 2.5, -8.596458)
+material_override = SubResource("StandardMaterial3D_p8rbg")
+use_collision = true
+size = Vector3(4, 1, 1)
+script = ExtResource("2_4dwx7")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Map" unique_id=2131452411]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -14.099578, 2.5, -2.4609056)
+material_override = SubResource("StandardMaterial3D_p8rbg")
+use_collision = true
+size = Vector3(4, 1, 1)
+script = ExtResource("2_4dwx7")
+
+[node name="Enemy" parent="." unique_id=277843308 instance=ExtResource("4_k2uda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.683733, 3.774726, -9.633987)

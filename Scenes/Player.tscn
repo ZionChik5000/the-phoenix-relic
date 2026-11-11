@@ -28,7 +28,10 @@ metadata/_custom_type_script = "uid://b7t4ffu3ysji0"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42235202, 0)
 current = true
 
-[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=899502778]
+[node name="InteractRayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=899502778]
+target_position = Vector3(0, 0, -3)
+
+[node name="AttackRayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1506243824]
 target_position = Vector3(0, 0, -3)
 
 [node name="Hand" type="Node3D" parent="Head/Camera3D" unique_id=1266492985]
